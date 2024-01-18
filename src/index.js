@@ -2,30 +2,22 @@ import React from 'react';
 import ReactDOM  from 'react-dom/client';
 import './index.css';
 import App from './pages/App/App';
-import CreateEmployee from './pages/CreateEmployee/CreateEmployee';
 import CurrentEmployee from './pages/CurrentEmployee/CurrentEmployee';
 import Error404 from './pages/Error404/Error404';
 import reportWebVitals from './reportWebVitals';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 
 const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <App />,
-    errorElement: <Error404 />,
-    children: [
-      {
-        index: true,
-        element: <CreateEmployee />,
-        errorElement: <Error404 />
-      }, 
-      {
-        path: 'employee-list',
-        element: <CurrentEmployee />,
-        errorElement: <Error404 />
-      }
-    ]
-  },
+    {
+      path: "/",
+      element: <App />,
+      errorElement: <Error404 />
+    },
+    {
+      path: 'employee-list',
+      element: <CurrentEmployee />,
+      errorElement: <Error404 />
+    }
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

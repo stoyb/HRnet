@@ -2,17 +2,18 @@ import React from 'react'
 import Anchor from '../../components/Anchor/Anchor'
 import Header from '../../components/Header/Header'
 import Title from '../../components/Title/Title'
-import styles from './CurrentEmployee.module.css'
 
-const CurrentEmployee = () => {
+const App = () => {
   return (
     <>
       <Header>
-        <Title text="Current Employees" className={styles.title} />
+        <Title text="HRnet"/>
+        <Anchor link="employee-list" text="View Current Employees"/>
+        <h2>Create Employee</h2>
       </Header>
-      <Anchor link="/" text="Home"/>
     </>
+    
   )
 }
 
-export default CurrentEmployee
+export default App
