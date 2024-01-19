@@ -1,12 +1,12 @@
 import React from 'react'
 import styles from './Field.module.css'
 
-const Field = ({label}) => {
+const Field = ({label, children}) => {
   return (
     <>
         <div className={styles.field}>
             <label>{label}</label>
-            <input/>
+            {children}
         </div>
     </>
   )
