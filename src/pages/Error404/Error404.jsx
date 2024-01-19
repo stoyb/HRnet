@@ -1,9 +1,9 @@
-import React from 'react'
+export default function Error404() {
 
-const Error404 = () => {
   return (
-    <div>Error404</div>
-  )
+    <div>
+      <h1>Oops!</h1>
+      <p>Sorry, an unexpected error has occurred.</p>
+    </div>
+  );
 }
-
-export default Error404
