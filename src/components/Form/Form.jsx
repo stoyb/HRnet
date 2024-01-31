@@ -20,6 +20,10 @@ const Form = () => {
       birthDate: null,
       startDate: null,
       department: '',
+      street: '',
+      city: '',
+      state: '',
+      zipCode: ''
     });
     const openModal = () => {
       setIsOpen(true);
@@ -50,6 +54,10 @@ const Form = () => {
             birthDate: null,
             startDate: null,
             department: '',
+            street: '',
+            city: '',
+            state: '',
+            zipCode: ''
           });
         openModal()
       };
@@ -73,9 +81,24 @@ const Form = () => {
             <Field label="Start Date">
                 <DataPicker selected={startDate} onChange={handleStartDateChange} />
             </Field>
-            <Fieldset/>
+            <Fieldset 
+              street={formData.street}
+              city={formData.city} 
+              state={formData.state} 
+              zipCode={formData.zipCode} 
+              setForm={setFormData}
+              formData={formData}
+              setFormData={(selectedOption) =>
+                setFormData({ ...formData, state: selectedOption })}
+              setformDataStreet={(e) => setFormData({...formData, street: e.target.value })}
+              setformDataCity={(e) => setFormData({...formData, city: e.target.value })}
+              setformDataZipCode={(e) => setFormData({...formData, zipCode: e.target.value })}
+              />
             <Field label="Department">
-                <Select options={department} value={formData.department} onChange={(selectedOption) =>
+                <Select 
+                  options={department} 
+                  value={formData.department} 
+                  onChange={(selectedOption) =>
               setFormData({ ...formData, department: selectedOption })
             }/>
             </Field>
