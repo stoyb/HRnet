@@ -7,6 +7,7 @@ import { faCircleXmark } from '@fortawesome/free-solid-svg-icons'
 const Modal = ({ open, close }) => {
   
   return (
+    
     <div className={open ? styles.modalContainerBlock : styles.modalContainerNone}>
       <div className={styles.modalContent}>
         <p>Employee created !</p>

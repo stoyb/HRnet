@@ -25,43 +25,9 @@ const CurrentEmployee = () => {
   const paginationComponentOptions = {
     rowsPerPageText: 'Show entries',
     rangeSeparatorText: 'of',
-    rowsPerPageOptions: [10, 20, 50]
+    rowsPerPageOptions: [10, 20, 50], 
+    paginationLabel: "Page",
   };
-
-  const CustomPagination = () => {
-
-    const [rowsPerPage, setRowsPerPage] = useState(0);
-    return (
-      <div className={styles.customPagination}>
-        <span>
-          {`${paginationComponentOptions.rowsPerPageText}: `}
-         <select value={rowsPerPage} onChange={(e) => setRowsPerPage(e.target.value)}>
-            {paginationComponentOptions.rowsPerPageOptions.map((option, i) => (
-              <option key={i} value={option}>
-                {option}
-              </option>
-            ))}
-          </select> 
-        </span>
-        <span>
-          {`Showing ${rowsPerPage} to ${rowsPerPage} of ${rowsPerPage} entries`}
-        </span>
-         <span>
-          {`${paginationComponentOptions.rangeSeparatorText} ${rowsPerPage} of ${rowsPerPage}`}
-        </span>
-        <button >
-          Previous
-        </button>
-        <span>
-          {rowsPerPage}
-        </span>
-        <button >
-          Next
-        </button> 
-      </div>
-    );
-  };
-
   return (
     <>
       <Header>
@@ -80,7 +46,6 @@ const CurrentEmployee = () => {
         columns={columns}
         data={filteredData}
         pagination
-        paginationComponent={CustomPagination}
         paginationComponentOptions={paginationComponentOptions}
         />
       </Main>
