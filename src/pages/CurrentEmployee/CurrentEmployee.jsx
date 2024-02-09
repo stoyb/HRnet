@@ -8,25 +8,20 @@ import Title from '../../components/Title/Title';
 import { columns } from '../../data/TableEmployee';
 import styles from './CurrentEmployee.module.css';
 
-
 const CurrentEmployee = () => {
   const dataEmployee = useSelector(state => state.employee.data);
   const [filterText, setFilterText] = useState('');
-
   const handleFilterChange = e => {
     setFilterText(e.target.value);
   };
-
   const filteredData = dataEmployee.filter(row => {
     const rowToCheck = Object.values(row).join('').toLowerCase();
     return rowToCheck.includes(filterText.toLowerCase());
   });
-
   const paginationComponentOptions = {
     rowsPerPageText: 'Show entries',
     rangeSeparatorText: 'of',
-    rowsPerPageOptions: [10, 20, 50], 
-    paginationLabel: "Page",
+    rowsPerPageOptions: [10, 20, 50]
   };
   return (
     <>
@@ -34,22 +29,23 @@ const CurrentEmployee = () => {
         <Title text="Current Employees" className={styles.title} />
       </Header>
       <Main>
-        <div>
+        <div className={styles.searchContainer}>
           <p> Search :</p>
           <input
             type="text"
             value={filterText}
             onChange={handleFilterChange}
+            className={styles.inputContainer}
           />
         </div>
         <DataTable
-        columns={columns}
-        data={filteredData}
-        pagination
-        paginationComponentOptions={paginationComponentOptions}
+          columns={columns}
+          data={filteredData}
+          pagination
+          paginationComponentOptions={paginationComponentOptions}
         />
+        <Anchor link="/" text="Home" />
       </Main>
-      <Anchor link="/" text="Home" />
     </>
   );
 };

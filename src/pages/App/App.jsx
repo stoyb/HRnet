@@ -4,11 +4,8 @@ import Form from '../../components/Form/Form'
 import Header from '../../components/Header/Header'
 import Main from '../../components/Main/Main'
 import Title from '../../components/Title/Title'
-import { useSelector } from 'react-redux'
 
 const App = () => {
-    const state = useSelector(state => state.employee)
-    console.log(state);
   return (
     <>
       <Header>

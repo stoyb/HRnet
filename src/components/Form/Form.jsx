@@ -46,7 +46,6 @@ const Form = () => {
     };
     const handleSubmit = (e) => {
         e.preventDefault(); 
-        console.log(formData);
         dispatch(setData(formData));
           setFormData({
             firstName: '',

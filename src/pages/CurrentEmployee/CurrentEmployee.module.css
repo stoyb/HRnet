@@ -1,3 +1,14 @@
 .customPagination{
     display: block;
 }
+
+.searchContainer{
+    display: flex;
+    align-items: center;
+    margin-right: 70%;
+}
+
+.inputContainer{
+    height:20px;
+    margin-left: 10px;
+}
