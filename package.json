@@ -1,5 +1,5 @@
 {
-  "name": "testocrodal",
+  "name": "hrnet",
   "version": "0.1.0",
   "peerDependencies": {
     "react": "^18.2.0",
@@ -19,6 +19,7 @@
     "react-redux": "^9.1.0",
     "react-router-dom": "^6.21.2",
     "react-select": "^5.8.0",
+    "react-text-modal": "^0.1.7",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

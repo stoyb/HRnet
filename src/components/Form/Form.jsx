@@ -4,11 +4,12 @@ import Field from '../Field/Field'
 import Select from 'react-select'
 import Fieldset from '../Fieldset/Fieldset'
 import DataPicker from 'react-datepicker'
-import { useState } from 'react'
+import { useState } from 'react' 
 import 'react-datepicker/dist/react-datepicker.css';
 import { useDispatch } from 'react-redux'
 import { setData } from '../../reducers/employeeReducer'
-import Modal from '../Modal/Modal'
+import { Modal } from 'react-text-modal'
+
 
 const Form = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -101,7 +102,7 @@ const Form = () => {
               setFormData({ ...formData, department: selectedOption })
             }/>
             </Field>
-            <Modal open={isOpen} close={closeModal}/>
+            <Modal open={isOpen} close={closeModal}>Employee created !</Modal>
             <button onClick={handleSubmit}>Save</button>
         </form>
     </>
