@@ -8,7 +8,7 @@ import { useState } from 'react'
 import 'react-datepicker/dist/react-datepicker.css';
 import { useDispatch } from 'react-redux'
 import { setData } from '../../reducers/employeeReducer'
-import { Modal } from 'react-text-modal'
+import Modal from 'react-text-modal-component/dist/Modal'
 
 
 const Form = () => {
@@ -102,7 +102,7 @@ const Form = () => {
               setFormData({ ...formData, department: selectedOption })
             }/>
             </Field>
-            <Modal open={isOpen} close={closeModal}>Employee created !</Modal>
+            <Modal isOpen={isOpen} handleClose={closeModal}>Employee created !</Modal>
             <button onClick={handleSubmit}>Save</button>
         </form>
     </>

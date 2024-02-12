@@ -30,12 +30,14 @@ const CurrentEmployee = () => {
       </Header>
       <Main>
         <div className={styles.searchContainer}>
-          <p> Search :</p>
+          <label htmlFor="searchInput"> Search :</label>
           <input
+            id="searchInput"
             type="text"
             value={filterText}
             onChange={handleFilterChange}
             className={styles.inputContainer}
+            aria-label="Search employees"
           />
         </div>
         <DataTable
