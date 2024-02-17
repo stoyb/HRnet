@@ -46,22 +46,22 @@ const Form = () => {
       setFormData({ ...formData, startDate: serializedDate });
     };
     const handleSubmit = (e) => {
-        e.preventDefault(); 
-        dispatch(setData(formData));
-          setFormData({
-            firstName: '',
-            lastName: '',
-            birthDate: null,
-            startDate: null,
-            department: '',
-            street: '',
-            city: '',
-            state: '',
-            zipCode: ''
-          });
-        openModal()
-      };
-    
+      e.preventDefault(); 
+      dispatch(setData(formData));
+      setFormData({
+          firstName: '',
+          lastName: '',
+          birthDate: null,
+          startDate: null,
+          department: '', 
+          street: '',
+          city: '',
+          state: '',
+          zipCode: ''
+      });
+      openModal();
+  };
+
     return (
     <>
         <form>
@@ -84,23 +84,20 @@ const Form = () => {
             <Fieldset 
               street={formData.street}
               city={formData.city} 
-              state={formData.state} 
               zipCode={formData.zipCode} 
-              setForm={setFormData}
-              formData={formData}
               setFormData={(selectedOption) =>
-                setFormData({ ...formData, state: selectedOption })}
+                setFormData({ ...formData, state: selectedOption.label })}
               setformDataStreet={(e) => setFormData({...formData, street: e.target.value })}
               setformDataCity={(e) => setFormData({...formData, city: e.target.value })}
               setformDataZipCode={(e) => setFormData({...formData, zipCode: e.target.value })}
               />
             <Field label="Department">
-                <Select 
-                  options={department} 
-                  value={formData.department} 
-                  onChange={(selectedOption) =>
-              setFormData({ ...formData, department: selectedOption })
-            }/>
+            <Select 
+            options={department} 
+            onChange={(selectedOption) =>
+              setFormData({ ...formData, department: selectedOption.label})
+            }
+            />
             </Field>
             <Modal isOpen={isOpen} handleClose={closeModal}>Employee created !</Modal>
             <button onClick={handleSubmit}>Save</button>

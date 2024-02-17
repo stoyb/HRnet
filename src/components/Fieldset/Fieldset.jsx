@@ -16,8 +16,12 @@ const Fieldset = ({street, city, state, setFormData, zipCode, setformDataStreet,
             <input type="text" value={city} onChange={setformDataCity}/>
         </Field>
         <Field label="State">
-            <Select options={unitedStates}  value={state}
-            onChange={setFormData} />
+            <Select 
+    options={unitedStates.map(option => ({ value: option.value, label: option.label }))} 
+    value={state}
+    onChange={setFormData} 
+    />
+
         </Field>
         <Field label="Zip Code">
             <input type="number" value={zipCode} onChange={setformDataZipCode}/>
